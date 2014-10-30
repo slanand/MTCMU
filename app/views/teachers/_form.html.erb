@@ -1,0 +1,15 @@
+<%= simple_nested_form_for(@teacher, html: { class: 'form-horizontal' }) do |teacher_form| %>
+  <div class="row">
+	<div class="small-6 columns">
+	  <h3><%= controller.action_name.capitalize %> Teacher</h3>
+		<%= render partial: "teacher_fields", locals: {f: teacher_form} %>
+
+	  <div class="form-actions">
+		<%= teacher_form.submit nil, class: 'button small radius' %>
+		<%= link_to 'Back to list of teachers', teachers_path, class: 'button small secondary radius' %>
+	  </div>
+	</div>
+  </div>
+
+  <!-- Be able to assign teachers to classroom -->
+<% end %>

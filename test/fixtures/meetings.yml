@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  meeting_type_id: 1
+  date: 2014-08-30
+  meeting_minutes: MyString
+  classroom_semester_id: 1
+
+two:
+  meeting_type_id: 1
+  date: 2014-08-30
+  meeting_minutes: MyString
+  classroom_semester_id: 1

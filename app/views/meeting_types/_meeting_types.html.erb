@@ -1,0 +1,20 @@
+<h3>Meeting Types</h3>
+
+<table class="table">
+  <tr>
+    <th width="150">Type</th>
+    <th width="100">Points Worth</th>
+    <th></th>
+  </tr>
+
+<% @meeting_types.each do |mt| %>
+  <tr>
+    <td><%= link_to mt.type, meeting_type_path(mt) %></td>
+    <td align="center"><%= mt.points %></td>  
+    <td align="center"></td>
+    <td><%= link_to 'Edit', edit_meeting_type_path(mt), class: "button tiny radius" %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= render partial: "partials/add_pagination", locals: {objects: @meeting_types} %>

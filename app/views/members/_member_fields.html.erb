@@ -1,0 +1,8 @@
+<%= f.input :andrew_id %>
+<%= f.input :first_name %>
+<%= f.input :last_name %>
+<%= f.input :email %>
+<%# if current_user.role? :admin %>
+  <%= f.input :admin, label: "Role", collection: %w[Admin Add-Only Read-Only], prompt: "Choose role..." %>
+<%# end %>
+<%= f.input :active %>

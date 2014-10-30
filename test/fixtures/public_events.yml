@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  start_date: 2014-08-30
+  end_date: 2014-08-30
+  time: 2014-08-30 18:16:42
+  meeting_type_id: 1
+  flyer: MyString
+
+two:
+  description: MyString
+  start_date: 2014-08-30
+  end_date: 2014-08-30
+  time: 2014-08-30 18:16:42
+  meeting_type_id: 1
+  flyer: MyString

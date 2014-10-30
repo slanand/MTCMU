@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "MoneyThink CMU" %></title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%# javascript_include_tag "application" %> 
+    <%= csrf_meta_tags %>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <%#= render partial: "partials/nav" %>
+      <div class="contain-to-grid">
+        <nav class="top-bar" data-topbar>
+          <ul class="title-area">
+            <li class="name" id="logo">
+              <%= link_to image_tag('logo.png', size: "100"), home_path %>
+            </li>
+          </ul>
+          <section class="top-bar-section">
+            <ul class="right">
+              <%= render partial: "partials/nav_item", locals: {model_name: "member"} %>
+                <%= render partial: "partials/nav_item", locals: {model_name: "classroom"} %>
+                <%= render partial: "partials/nav_item", locals: {model_name: "public_event"} %>
+                <%= render partial: "partials/nav_item", locals: {model_name: "school"} %>
+                <%= render partial: "partials/nav_item", locals: {model_name: "teacher"} %>
+                <%= render partial: "partials/nav_item", locals: {model_name: "excuse"} %>
+                <%= render partial: "partials/nav_item", locals: {model_name: "meeting"} %>
+                <%= render partial: "partials/nav_item", locals: {model_name: "meeting_type"} %>
+            
+            </ul>
+          </section> 
+        </nav>
+      </div>
+
+    <div class="row">
+      <div class="small-10 columns" id="main_content">
+        <%= render partial: "partials/flash" %>
+        <%= yield %>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="small-10 columns" id="footer">
+          <%= render partial: 'partials/footer' %>
+        </div>
+      </div> 
+    </footer> 
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>

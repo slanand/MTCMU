@@ -1,0 +1,13 @@
+<%= simple_nested_form_for(@excuse, html: { class: 'form-horizontal' }) do |excuse_form| %>
+  <div class="row">
+	<div class="small-6 columns">
+	  <h3><%= controller.action_name.capitalize %> Excuse</h3>
+		<%= render partial: "excuse_fields", locals: {f: excuse_form} %>
+
+	  <div class="form-actions">
+		<%= excuse_form.submit nil, class: 'button small radius' %>
+		<%= link_to 'Back to list of excuses', excuses_path, class: 'button small secondary radius' %>
+	  </div>
+	</div>
+  </div>
+<% end %>

@@ -1,0 +1,26 @@
+<h3>Active Teachers</h3>
+
+<table class="table">
+  <tr>
+    <th width="150">Name</th>
+    <th width="100">Phone</th>
+    <th width="150">Email</th>
+    <th width="300">Partner</th>
+    <th width="100">School</th>
+    <th></th>
+  </tr>
+
+<% @active_teachers.each do |teacher| %>
+  <tr>
+    <td><%= link_to teacher.name, teacher_path(teacher) %></td>
+    <td><%= teacher.phone %></td>  
+    <td><%= mail_to(teacher.email, teacher.email, encode: "javascript") %></td>
+    <td><%= teacher.partner %></td>
+    <td><%= teacher.school.name %></td>
+    <td align="center"></td>
+    <td><%= link_to 'Edit', edit_teacher_path(teacher), class: "button tiny radius" %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= render partial: "partials/add_pagination", locals: {objects: @active_teachers} %>

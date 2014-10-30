@@ -1,0 +1,47 @@
+  <div class="contain-to-grid">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name" id="logo">
+          <%= link_to image_tag('logo.png'), style: "height: 25px;", home_path %>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <% if logged_in? && (current_user.role? :admin) %>
+              <%= render partial: "partials/nav_item", locals: {model_name: "member"} %>
+              <%= render partial: "partials/nav_item", locals: {model_name: "classroom"} %>
+              <%= render partial: "partials/nav_item", locals: {model_name: "public_event"} %>
+              <%= render partial: "partials/nav_item", locals: {model_name: "school"} %>
+              <%= render partial: "partials/nav_item", locals: {model_name: "teacher"} %>
+              <%= render partial: "partials/nav_item", locals: {model_name: "excuse"} %>
+              <%= render partial: "partials/nav_item", locals: {model_name: "meeting"} %>
+              <%= render partial: "partials/nav_item", locals: {model_name: "meeting_type"} %>
+          <% else %>
+            <li><%#= link_to "List Camps", camps_path %></li>
+          <% end %>
+        </ul>
+       </section>
+       
+       <section class="top-bar-section"> 
+          <div id="container" class="right">
+            <div id="login">
+              <% if logged_in? %>
+                <div id="nav_right"><%= current_user.instructor.proper_name %> : <%= link_to 'Logout', logout_path %></div>
+
+              <% else %>
+
+                <%= form_tag sessions_path do %>
+                  <form>
+                    <div class="login_f"><%= text_field_tag :username, nil, placeholder: "username", id:"username" %></div>
+                    <div class="login_f"><%= password_field_tag :password, nil, placeholder: "password", id:"password" %></div>
+                    <%= submit_tag "Log In", id:"login" %>
+                  </form>
+                <% end %>
+              
+              <% end %>
+            </div>
+          </div>
+        </ul>
+      </section>
+    </nav>
+  </div>

@@ -1,0 +1,19 @@
+#CMU MoneyThink#
+
+Current Status:
+
+Models built for:
+- classroom
+- classroom semester
+- excuse
+- meeting
+- meeting attendance
+- meeting type
+- member
+- member assignment
+- public event
+- school
+- teacher
+- user
+
+Built appropriate views, and simple forms for some of the models. Some of the ones that would be nested, such as member assignment, have not been touched yet.

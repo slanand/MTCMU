@@ -1,0 +1,15 @@
+<%= simple_nested_form_for(@school, html: { class: 'form-horizontal' }) do |school_form| %>
+  <div class="row">
+	<div class="small-6 columns">
+	  <h3><%= controller.action_name.capitalize %> School</h3>
+		<%= render partial: "school_fields", locals: {f: school_form} %>
+
+	  <div class="form-actions">
+		<%= school_form.submit nil, class: 'button small radius' %>
+		<%= link_to 'Back to list of schools', schools_path, class: 'button small secondary radius' %>
+	  </div>
+	</div>
+  </div>
+
+  <!-- add nested functionality to add classrooms -->
+<% end %>

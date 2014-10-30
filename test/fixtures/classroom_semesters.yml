@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  classroom_id: 1
+  teacher_id: 1
+  year: 1
+  fall: false
+  active: false
+
+two:
+  classroom_id: 1
+  teacher_id: 1
+  year: 1
+  fall: false
+  active: false

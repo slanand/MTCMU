@@ -1,0 +1,6 @@
+<h1><%= @member.name %></h1>
+
+<p>Andrew ID: <%= @member.andrew_id %></p>
+<p>E-mail: <%= @member.email %></p>
+
+<%= render partial: "partials/object_options", locals: {model_name: "member", object: @member, can_destroy: true} %>

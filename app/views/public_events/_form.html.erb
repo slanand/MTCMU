@@ -1,0 +1,13 @@
+<%= simple_form_for(@event, html: { class: 'form-horizontal' }) do |event_form| %>
+  <div class="row">
+	<div class="small-6 columns">
+	  <h3><%= controller.action_name.capitalize %> Event</h3>
+		<%= render partial: "event_fields", locals: {f: event_form} %>
+
+	  <div class="form-actions">
+		<%= event_form.submit nil, class: 'button small radius' %>
+		<%= link_to 'Back to list of events', public_events_path, class: 'button small secondary radius' %>
+	  </div>
+	</div>
+  </div>
+<% end %>

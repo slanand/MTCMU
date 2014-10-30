@@ -1,0 +1,23 @@
+<h3>Active Members</h3>
+
+<table class="table">
+  <tr>
+    <th width="150">Name</th>
+    <th width="100">AndrewID</th>
+    <th width="150">Email</th>
+    <th width="300">Current Assignment</th>
+    <th></th>
+  </tr>
+
+<% @active_members.each do |member| %>
+  <tr>
+    <td><%= link_to member.name, member_path(member) %></td>
+    <td align="center"><%= member.andrew_id %></td>  
+    <td align="center"><%= member.email %></td>
+    <td align="center"></td>
+    <td><%= link_to 'Edit', edit_member_path(member), class: "button tiny radius" %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= render partial: "partials/add_pagination", locals: {objects: @active_members} %>

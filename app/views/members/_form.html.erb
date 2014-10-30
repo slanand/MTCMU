@@ -1,0 +1,25 @@
+<%= simple_nested_form_for(@member, html: { class: 'form-horizontal' }) do |member_form| %>
+	<div class="row">
+		<div class="small-6 columns">
+			<h3><%= controller.action_name.capitalize %> Member</h3>
+			<%= render partial: "member_fields", locals: {f: member_form} %>
+
+			<div class="form-actions">
+				<%= member_form.submit nil, class: 'button small radius' %>
+				<%= link_to 'Back to list of members', members_path, class: 'button small secondary radius' %>
+			</div>
+		</div>
+
+    <div class="small-1 columns">&nbsp;</div>
+      
+    <!-- Add member to a classroom_assignment -->
+    <!-- <div class="small-5 columns"> -->
+    	<%# if controller.action_name=="edit" && @student.active %>
+			<%#= member_form.simple_fields_for :registrations do |registration_form| %>
+				<%#= render partial: "registration_fields", locals: {f: registration_form, action: controller.action_name } %>
+			<%# end %>
+			<br /><%#= member_form.link_to_add("Add Registration", :registrations, class: 'button tiny') %>
+      	<% #end %>
+    <!-- </div> -->
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<h3>Active Classrooms</h3>
+
+<table class="table">
+  <tr>
+    <th width="150">Name</th>
+    <th width="100">Address</th>
+    <th width="150">Active</th>
+    <th></th>
+  </tr>
+
+<% @active_classrooms.each do |classroom| %>
+  <tr>
+    <td><%= link_to classroom.classroom_number, classroom_path(classroom) %></td>
+    <td><%= classroom.school.name %>
+        <%= classroom.school.street_1 %><br/>
+        <%= classroom.school.street_2 %><br/>
+        "Pittsburgh, PA"</td>  
+    <td align="center"><%= classroom.active ? "Yes" : "No" %></td>
+    <td><%= link_to 'Edit', edit_classroom_path(classroom), class: "button tiny radius" %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= render partial: "partials/add_pagination", locals: {objects: @active_classrooms} %>

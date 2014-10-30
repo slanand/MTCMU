@@ -1,0 +1,7 @@
+<%= f.input :first_name %>
+<%= f.input :last_name %>
+<%= f.input :phone %>
+<%= f.input :email %>
+<%= f.input :partner %>
+<%= f.input :school_id, collection: School.alphabetical, prompt: "Select school..." %>
+<%= f.input :active %>

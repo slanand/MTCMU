@@ -1,0 +1,24 @@
+<h3>Upcoming Events</h3>
+
+<table class="table">
+  <tr>
+    <th width="150">Name</th>
+    <th width="100">Description</th>
+    <th width="150">Dates</th>
+    <th width="300">Time</th>
+    <th></th>
+  </tr>
+
+<% @upcoming_events.each do |event| %>
+  <tr>
+    <td><%= link_to event.name, public_event_path(event) %></td>
+    <td><%= event.description %></td>  
+    <td><%= event.start_date %> - <%= event.end_date %></td>
+    <td><%= event.time %></td>
+    <td align="center"></td>
+    <td><%= link_to 'Edit', edit_public_event_path(event), class: "button tiny radius" %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= render partial: "partials/add_pagination", locals: {objects: @upcoming_events} %>

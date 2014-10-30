@@ -1,0 +1,19 @@
+<h3>Excuses</h3>
+
+<table class="table">
+  <tr>
+    <th width="150">Name</th>
+    <th width="100">Reason</th>
+    <th></th>
+  </tr>
+
+<% @excuses.each do |excuse| %>
+  <tr>
+    <td><%= link_to excuse.name, excuse_path(excuse) %></td>
+    <td><%= excuse.reason %></td>  
+    <td><%= link_to 'Edit', edit_excuse_path(excuse), class: "button tiny radius" %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= render partial: "partials/add_pagination", locals: {objects: @excuses} %>
