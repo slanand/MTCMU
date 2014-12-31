@@ -1,0 +1,2 @@
+module MenteeAttendancesHelper
+end

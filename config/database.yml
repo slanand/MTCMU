@@ -22,19 +22,19 @@ default: &default
   pool: 5
 
 development:
-  adopter: postgresql
+  adapter: postgresql
   encoding: unicode
-  database: mtcmu_dev
+  database: mtcmu
   pool: 5
-  username: sherry
+  username: swatcat209
   password:
 
 test:
-  adopter: postgresql
+  adapter: postgresql
   encoding: unicode
-  database: mtcmu_test
+  database: mtcmu
   pool: 5
-  username: sherry
+  username: swatcat209
   password:
 
 

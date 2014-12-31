@@ -1,0 +1,6 @@
+<h1><%= @lesson.lesson_plan %></h1>
+
+<p>Overview: <%= @lesson.overview %></p>
+<p><strong><%= link_to "Presentation", @lesson.presentation_url %></strong></p>
+
+<%= render partial: "partials/object_options", locals: {model_name: "lesson", object: @lesson, can_destroy: true} %>

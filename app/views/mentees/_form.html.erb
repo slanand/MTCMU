@@ -1,0 +1,13 @@
+<%= simple_form_for(@mentee, html: { class: 'form-horizontal' }) do |mentee_form| %>
+<div class="row">
+	<div class="small-6 columns">
+	  <h3><%= controller.action_name.capitalize %> Mentee</h3>
+		<%= render partial: "mentee_fields", locals: {f: mentee_form} %>
+
+	  <div class="form-actions">
+		<%= mentee_form.submit nil, class: 'button small radius' %>
+		<%= link_to 'Back to list of mentees', mentees_path, class: 'button small secondary radius' %>
+	  </div>
+	</div>
+  </div>
+<% end %>

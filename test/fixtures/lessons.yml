@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  overview: MyString
+  lesson_plan: MyString
+  presentation: MyString
+
+two:
+  overview: MyString
+  lesson_plan: MyString
+  presentation: MyString

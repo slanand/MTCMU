@@ -1,0 +1,7 @@
+<h1><%= @resource.name %></h1>
+
+<p>Summary: <%= @resource.summary %></p>
+<p>URL: <%= @resource.url %></p>
+<p>Lesson: <%= @resource.lesson %></p>
+
+<%= render partial: "partials/object_options", locals: {model_name: "resource", object: @resource, can_destroy: true} %>

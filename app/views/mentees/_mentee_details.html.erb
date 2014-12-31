@@ -1,0 +1,6 @@
+<h1><%= @mentee.name %></h1>
+
+<p>First Name: <%= @mentee.first_name %></p>
+<p>Last Name: <%= @mentee.last_name %></p>
+
+<%= render partial: "partials/object_options", locals: {model_name: "mentee", object: @mentee, can_destroy: true} %>

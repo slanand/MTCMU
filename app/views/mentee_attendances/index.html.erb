@@ -1,0 +1,25 @@
+<h1>Listing mentee_attendances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mentee_attendances.each do |mentee_attendance| %>
+      <tr>
+        <td><%= link_to 'Show', mentee_attendance %></td>
+        <td><%= link_to 'Edit', edit_mentee_attendance_path(mentee_attendance) %></td>
+        <td><%= link_to 'Destroy', mentee_attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mentee attendance', new_mentee_attendance_path %>

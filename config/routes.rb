@@ -1,4 +1,16 @@
 MoneyThinkCMU::Application.routes.draw do
+  resources :resources
+
+  resources :classroom_lessons
+
+  resources :lessons
+
+  resources :mentee_attendances
+
+  resources :mentee_participations
+
+  resources :mentees
+
   resources :classrooms
   resources :teachers
   resources :schools

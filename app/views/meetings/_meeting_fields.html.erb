@@ -1,4 +1,4 @@
 <%= f.input :meeting_type_id %>
 <%= f.input :date, as: :date, order: [:month, :day, :year] %>
 <%= f.input :meeting_minutes %>
-<%= f.input :classroom_semester_id %>
+<%= f.input :classroom_semester_id, collection: ClassroomSemester.active.chronological, prompt: "Select classroom semester..." %>

@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140901021959) do
+ActiveRecord::Schema.define(version: 20141229202902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "classroom_lessons", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "lesson_id"
+    t.integer  "meeting_id"
+  end
+
+  add_index "classroom_lessons", ["lesson_id"], name: "index_classroom_lessons_on_lesson_id", using: :btree
+  add_index "classroom_lessons", ["meeting_id"], name: "index_classroom_lessons_on_meeting_id", using: :btree
 
   create_table "classroom_semesters", force: true do |t|
     t.integer  "classroom_id"
@@ -35,7 +45,16 @@ ActiveRecord::Schema.define(version: 20140901021959) do
   end
 
   create_table "excuses", force: true do |t|
+    t.string   "name"
     t.string   "reason"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lessons", force: true do |t|
+    t.string   "overview"
+    t.string   "lesson_plan"
+    t.string   "presentation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -84,7 +103,34 @@ ActiveRecord::Schema.define(version: 20140901021959) do
     t.datetime "updated_at"
   end
 
+  create_table "mentee_attendances", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "mentee_participation_id"
+    t.boolean  "present"
+  end
+
+  add_index "mentee_attendances", ["mentee_participation_id"], name: "index_mentee_attendances_on_mentee_participation_id", using: :btree
+
+  create_table "mentee_participations", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "mentee_id"
+    t.integer  "classroom_semester_id"
+  end
+
+  add_index "mentee_participations", ["classroom_semester_id"], name: "index_mentee_participations_on_classroom_semester_id", using: :btree
+  add_index "mentee_participations", ["mentee_id"], name: "index_mentee_participations_on_mentee_id", using: :btree
+
+  create_table "mentees", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "public_events", force: true do |t|
+    t.string   "name"
     t.string   "description"
     t.date     "start_date"
     t.date     "end_date"
@@ -94,6 +140,17 @@ ActiveRecord::Schema.define(version: 20140901021959) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "resources", force: true do |t|
+    t.string   "url"
+    t.string   "summary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "lesson_id"
+    t.string   "name"
+  end
+
+  add_index "resources", ["lesson_id"], name: "index_resources_on_lesson_id", using: :btree
 
   create_table "schools", force: true do |t|
     t.string   "name"

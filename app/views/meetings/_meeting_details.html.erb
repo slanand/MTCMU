@@ -1,0 +1,7 @@
+<h1><%= @meeting.meeting_type %>, <%= @meeting.date.strftime('%m/%d/%y') %></h1>
+
+<p>Classroom Semester: <%= link_to @meeting.classroom_semester.teacher.last_name, classroom_semester_path(@meeting.classroom_semester) %>, <%= @meeting.classroom_semester.year %></p>
+
+<p><strong><%= link_to "Meeting Minutes", @meeting.meeting_minutes_url %></strong></p>
+
+<%= render partial: "partials/object_options", locals: {model_name: "lesson", object: @lesson, can_destroy: true} %>

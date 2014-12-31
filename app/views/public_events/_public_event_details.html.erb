@@ -1,0 +1,10 @@
+<h1><%= @public_event.description %></h1>
+
+<p>Start date: <%= @public_event.start_date.strftime('%m/%d/%y') %></p>
+<p>End date: <%= @public_event.end_date.strftime('%m/%d/%y') %></p>
+<p>Time: <%= @public_event.time %></p>
+<p>Meeting Type: <%= link_to @public_event.meeting_type.type, @meeting_type_path(@public_event.meeting_type) %></p>
+
+<p><strong><%= link_to "Flyer", @public_event.flyer_url %></strong></p>
+
+<%= render partial: "partials/object_options", locals: {model_name: "lesson", object: @lesson, can_destroy: true} %>

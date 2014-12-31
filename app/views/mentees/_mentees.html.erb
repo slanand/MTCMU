@@ -1,0 +1,15 @@
+<h3>Mentees</h3>
+
+<table class="table">
+  <tr>
+    <th width="150">Name</th>
+    <th></th>
+  </tr>
+
+<% @mentees.each do |mentee| %>
+  <tr>
+    <td><%= link_to mentee.name, mentee_path(mentee) %></td> 
+    <td><%= link_to 'Edit', edit_mentee_path(mentee), class: "button tiny radius" %></td>
+  </tr>
+<% end %>
+</table>

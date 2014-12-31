@@ -1,0 +1,18 @@
+<h3>Lessons</h3>
+
+<table class="table">
+  <tr>
+    <th width="150">Lesson Plan</th>
+    <th width="150">Overview</th>
+    <th></th>
+  </tr>
+
+<% @lessons.each do |lesson| %>
+  <tr>
+    <td><%= link_to lesson.lesson_plan, lesson_path(lesson) %></td> 
+    <td width="420"><span class="smtext"><%= truncate(lesson.overview, length: 25, omission: ' ') %> "..." </span>
+	</td>
+    <td><%= link_to 'Edit', edit_lesson_path(lesson), class: "button tiny radius" %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,19 @@
+<h3>Resources</h3>
+
+<table class="table">
+  <tr>
+    <th width="150">Name</th>
+    <th width="150">Lesson</th>
+    <th></th>
+  </tr>
+
+<% @resources.each do |resource| %>
+  <tr>
+    <td width="420"><strong><%= link_to resource.name, resource_path(resource) %> </strong> <br>
+		<span class="smtext"><%= truncate(resource.summary, length: 25, omission: ' ') %> "..." </span>
+	</td>
+	<td><%= link_to resource.lesson, lesson_path(resource.lesson) %></td> 
+    <td><%= link_to 'Edit', edit_resource_path(resource), class: "button tiny radius" %></td>
+  </tr>
+<% end %>
+</table>

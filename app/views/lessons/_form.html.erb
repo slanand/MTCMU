@@ -1,0 +1,13 @@
+<%= simple_form_for(@lesson, html: { class: 'form-horizontal' }) do |lesson_form| %>
+<div class="row">
+	<div class="small-6 columns">
+	  <h3><%= controller.action_name.capitalize %> Lesson</h3>
+		<%= render partial: "lesson_fields", locals: {f: lesson_form} %>
+
+	  <div class="form-actions">
+		<%= lesson_form.submit nil, class: 'button small radius' %>
+		<%= link_to 'Back to list of lessons', lessons_path, class: 'button small secondary radius' %>
+	  </div>
+	</div>
+  </div>
+<% end %>

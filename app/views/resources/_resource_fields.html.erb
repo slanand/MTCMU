@@ -1,0 +1,4 @@
+<%= f.input :name %>
+<%= f.input :url %>
+<%= f.input :summary %>
+<%= f.input :lesson_id, collection: Lesson.alphabetical, prompt: "Select lesson..." %>

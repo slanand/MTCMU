@@ -1,0 +1,14 @@
+<%= simple_form_for(@resource, html: { class: 'form-horizontal' }) do |resource_form| %>
+<div class="row">
+	<div class="small-6 columns">
+	  <h3><%= controller.action_name.capitalize %> Resource</h3>
+		<%= render partial: "resource_fields", locals: {f: resource_form} %>
+
+	  <div class="form-actions">
+		<%= resource_form.submit nil, class: 'button small radius' %>
+		<%= link_to 'Back to list of resources', resources_path, class: 'button small secondary radius' %>
+	  </div>
+	</div>
+  </div>
+<% end %>
+
